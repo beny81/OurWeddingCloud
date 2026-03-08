@@ -28,7 +28,7 @@ export default {
       </footer> -->
 
       <main class="col d-none d-md-block px-0 main-content">
-        <nav class="navbar bg-primary position-sticky top-0 w-100 mb-2 px-0">
+        <nav class="navbar position-sticky top-0 w-100 mb-2 px-0">
           <div class="container-fluid justify-content-end">
             <p class="text-center">Fixed top</p>
           </div>
@@ -45,6 +45,10 @@ export default {
 </template>
 
 <style scoped>
+nav {
+  background-color: #ffe6d1; /* soft pastel background */
+  color: #b63e3e; /* match your wedding accent */
+}
 .sidebar {
   width: 22%;
   position: fixed;

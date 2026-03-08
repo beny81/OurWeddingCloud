@@ -9,7 +9,7 @@ export default {
 </script>
 
 <template>
-  <nav class="navbar bg-primary fixed-top d-lg-none">
+  <nav class="navbar fixed-top d-lg-none">
     <div class="container-fluid">
       <!-- Toggler for mobile -->
       <button
@@ -51,6 +51,10 @@ export default {
 <script setup></script>
 
 <style scoped>
+nav {
+  background-color: #ffe6d1; /* soft pastel background */
+  color: #b63e3e; /* match your wedding accent */
+}
 .navbar-brand {
   font-weight: 500; /* less bold for lighter feel */
 }
