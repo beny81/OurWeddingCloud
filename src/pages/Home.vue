@@ -19,6 +19,7 @@ export default {
     <div>
       <p class="text-center">Nothing yet</p>
       <p class="text-center">Try to refresh</p>
+      <p class="text-center">Thank you for being part of our community!</p>
     </div>
 
     <template #aside> </template>
