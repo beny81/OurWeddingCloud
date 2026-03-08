@@ -1,19 +1,17 @@
-<script>
+<script setup>
 import NavItem from '@/components/NavItem.vue'
 import CountdownTimer from './CountdownTimer.vue'
+import { weddingInfoStore } from '@/stores/weddingInfo.js'
 
-export default {
-  components: {
-    NavItem,
-    CountdownTimer,
-  },
-}
+const infoStore = weddingInfoStore()
+const brides = infoStore.brides
 </script>
 
 <template>
   <nav class="navbar fixed-top d-lg-none">
-    <div class="container-fluid">
-      <!-- Toggler for mobile -->
+    <div class="container-fluid nav-wrapper">
+
+      <!-- Mobile menu button -->
       <button
         class="navbar-toggler bg-white"
         type="button"
@@ -25,15 +23,22 @@ export default {
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <!-- Brand -->
-      <!-- <a class="navbar-brand ms-2" href="#">S & Q</a> -->
-      <CountdownTimer />
+      <!-- Couple + countdown -->
+      <div class="couple-info text-center">
+        <h6 class="fw-bold m-0">
+          {{ brides[0]?.firstName }} & {{ brides[1]?.firstName }}'s Wedding
+        </h6>
+      <div class="text-gray">
+          <CountdownTimer />
+        </div>
+      </div>
+
+      <!-- Spacer for balance -->
+      <div class="nav-spacer"></div>
 
       <!-- Offcanvas menu -->
       <div class="offcanvas offcanvas-start leftNavBar" tabindex="-1" id="offcanvasNavbar">
         <div class="offcanvas-header">
-          <!-- <h5 class="offcanvas-title">S & Q wedding</h5> -->
-
           <button
             type="button"
             class="btn-close"
@@ -44,30 +49,38 @@ export default {
 
         <div class="offcanvas-body p-0">
           <ul class="navbar-nav flex-column px-0">
-            <nav-item />
+            <NavItem />
           </ul>
         </div>
       </div>
+
     </div>
   </nav>
 </template>
 
-<script setup></script>
-
 <style scoped>
 nav {
-  background-color: #ffe6d1; /* soft pastel background */
-  color: #b63e3e; /* match your wedding accent */
+  background-color: #ffe6d1;
+  color: #b63e3e;
 }
+
 .navbar-brand {
-  font-weight: 500; /* less bold for lighter feel */
+  font-weight: 500;
 }
+
 .nav-link {
   padding: 0.5rem 1rem;
 }
+
 .leftNavBar {
-  width: 60%; /* narrower width */
+  width: 60%;
   background: linear-gradient(145deg, #fff8f0, #ffece0);
   border: 1px solid #ffd6ba;
+}
+
+
+.text-gray {
+  color: gray;
+  font-size: 0.8rem;
 }
 </style>

@@ -43,8 +43,4 @@ onUnmounted(() => {
   <p class="fw-bold">Time left :{{ countdown }}</p>
 </template>
 
-<style scoped>
-.countdown-timer {
-  color: #b63e3e; /* match your wedding accent */
-}
-</style>
+
