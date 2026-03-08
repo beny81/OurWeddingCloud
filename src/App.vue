@@ -9,7 +9,7 @@
       discover all the features we have in store for you. Thank you for being part of our community!
     </div>
     <div>
-      <p class="text-center">Nothing yet</p>
+      <p class="text-center">Gardicia not yet</p>
       <p class="text-center">Try to refresh</p>
     </div>
     <!-- <RouterView /> -->
