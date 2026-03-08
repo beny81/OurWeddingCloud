@@ -9,7 +9,7 @@ export default {
 </script>
 <template>
   <main class="sticky-top row bg-light top-0 start-0 w-100 h-100">
-    <ul class="col offset-1 nav flex-column">
+    <ul class="col offset-1 nav flex-column px-0 ms-0">
       <!-- <AppLogo /> -->
 
       <nav-item />

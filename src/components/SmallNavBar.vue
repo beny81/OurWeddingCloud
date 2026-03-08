@@ -24,12 +24,12 @@ export default {
       </button>
 
       <!-- Brand -->
-      <a class="navbar-brand ms-2" href="#">S & Q</a>
+      <!-- <a class="navbar-brand ms-2" href="#">S & Q</a> -->
 
       <!-- Offcanvas menu -->
       <div class="offcanvas offcanvas-start leftNavBar" tabindex="-1" id="offcanvasNavbar">
         <div class="offcanvas-header">
-          <h5 class="offcanvas-title">S & Q wedding</h5>
+          <!-- <h5 class="offcanvas-title">S & Q wedding</h5> -->
           <button
             type="button"
             class="btn-close"
@@ -39,7 +39,7 @@ export default {
         </div>
 
         <div class="offcanvas-body p-0">
-          <ul class="navbar-nav flex-column">
+          <ul class="navbar-nav flex-column px-0">
             <nav-item />
           </ul>
         </div>
@@ -58,6 +58,8 @@ export default {
   padding: 0.5rem 1rem;
 }
 .leftNavBar {
-  width: 35%; /* narrower width */
+  width: 60%; /* narrower width */
+  background: linear-gradient(145deg, #fff8f0, #ffece0);
+  border: 1px solid #ffd6ba;
 }
 </style>

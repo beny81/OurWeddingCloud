@@ -46,10 +46,10 @@ export default {
 
 <style scoped>
 .sidebar {
-  width: 20%;
+  width: 22%;
   position: fixed;
 }
 .main-content {
-  margin-left: 20%;
+  margin-left: 22%;
 }
 </style>
