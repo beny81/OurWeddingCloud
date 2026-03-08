@@ -8,6 +8,10 @@
       and check back soon for updates! In the meantime, feel free to explore our website and
       discover all the features we have in store for you. Thank you for being part of our community!
     </div>
+    <div>
+      <p class="text-center">Nothing yet</p>
+      <p class="text-center">Try to refresh</p>
+    </div>
     <!-- <RouterView /> -->
   </main>
 </template>
