@@ -50,6 +50,7 @@ export default {
 nav {
   background-color: #ffe6d1; /* soft pastel background */
   color: #b63e3e; /* match your wedding accent */
+  border: 1px solid #ffd6ba;
 }
 .sidebar {
   width: 22%;

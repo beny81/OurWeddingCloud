@@ -10,7 +10,6 @@ const brides = infoStore.brides
 <template>
   <nav class="navbar fixed-top d-lg-none">
     <div class="container-fluid nav-wrapper">
-
       <!-- Mobile menu button -->
       <button
         class="navbar-toggler bg-white"
@@ -28,7 +27,7 @@ const brides = infoStore.brides
         <h6 class="fw-bold m-0">
           {{ brides[0]?.firstName }} & {{ brides[1]?.firstName }}'s Wedding
         </h6>
-      <div class="text-gray">
+        <div class="text-gray">
           <CountdownTimer />
         </div>
       </div>
@@ -53,7 +52,6 @@ const brides = infoStore.brides
           </ul>
         </div>
       </div>
-
     </div>
   </nav>
 </template>
@@ -77,7 +75,6 @@ nav {
   background: linear-gradient(145deg, #fff8f0, #ffece0);
   border: 1px solid #ffd6ba;
 }
-
 
 .text-gray {
   color: gray;

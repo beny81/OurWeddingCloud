@@ -42,5 +42,3 @@ onUnmounted(() => {
 <template>
   <p class="fw-bold">Time left :{{ countdown }}</p>
 </template>
-
-
