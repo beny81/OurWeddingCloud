@@ -27,9 +27,9 @@ const isActive = (linkPath) => {
   <nav aria-label="Wedding Navigation" class="wedding-nav h-100">
     <!-- Wedding Info Section -->
     <section class="wedding-info p-4 mb-4 rounded shadow-sm bg-light text-center">
-      <h2 class="wedding-title mb-2">
+      <p class="wedding-title mb-2">
         {{ brides[0]?.firstName }} & {{ brides[1]?.firstName }}'s Wedding
-      </h2>
+      </p>
       <p class="venue-name mb-1">{{ WEDDING_DETAILS.venueName }}</p>
       <p class="date-time mb-1">{{ formattedDate }} at {{ WEDDING_DETAILS.time }}</p>
       <p class="address mb-0">{{ WEDDING_DETAILS.address }}</p>
@@ -60,7 +60,7 @@ const isActive = (linkPath) => {
 }
 
 .wedding-title {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #b63e3e;
 }

@@ -18,7 +18,7 @@ export default {
       <header class="ms-0 d-none d-md-block sidebar sticky-top top-0 start-0 h-100 px-0">
         <LeftNavBar />
       </header>
-      <header class="d-block d-md-none">
+      <header class="d-block d-md-none mb-2">
         <small-nav-bar />
       </header>
 
