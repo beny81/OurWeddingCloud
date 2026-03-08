@@ -5,15 +5,32 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'default',
+      name: 'home',
       component: () => import('../pages/Home.vue'),
-      // meta: { requiresAuth: true },
     },
     {
       path: '/home',
-      name: 'Home',
-      component: () => import('../pages/Home.vue'),
-      // meta: { requiresAuth: true },
+      redirect: '/',
+    },
+    {
+      path: '/schedule',
+      name: 'Schedule',
+      component: () => import('../pages/Schedule.vue'),
+    },
+    {
+      path: '/travel',
+      name: 'Travel',
+      component: () => import('../pages/Travel.vue'),
+    },
+    {
+      path: '/wedding-party',
+      name: 'Wedding Party',
+      component: () => import('../pages/WeddingParty.vue'),
+    },
+    {
+      path: '/gallery',
+      name: 'Gallery',
+      component: () => import('../pages/Gallery.vue'),
     },
   ],
 })
