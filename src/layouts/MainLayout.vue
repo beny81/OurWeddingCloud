@@ -1,11 +1,13 @@
 <script>
 import SmallNavBar from '@/components/SmallNavBar.vue'
 import LeftNavBar from '@/components/LeftNavBar.vue'
+import CountdownTimer from '@/components/CountdownTimer.vue'
 
 export default {
   components: {
     LeftNavBar,
     SmallNavBar,
+    CountdownTimer,
   },
 }
 </script>
@@ -30,7 +32,7 @@ export default {
       <main class="col d-none d-md-block px-0 main-content">
         <nav class="navbar position-sticky top-0 w-100 mb-2 px-0">
           <div class="container-fluid justify-content-end">
-            <p class="text-center">Fixed top</p>
+            <CountdownTimer />
           </div>
         </nav>
 

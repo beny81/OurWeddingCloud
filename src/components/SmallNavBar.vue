@@ -1,9 +1,11 @@
 <script>
 import NavItem from '@/components/NavItem.vue'
+import CountdownTimer from './CountdownTimer.vue'
 
 export default {
   components: {
     NavItem,
+    CountdownTimer,
   },
 }
 </script>
@@ -25,11 +27,13 @@ export default {
 
       <!-- Brand -->
       <!-- <a class="navbar-brand ms-2" href="#">S & Q</a> -->
+      <CountdownTimer />
 
       <!-- Offcanvas menu -->
       <div class="offcanvas offcanvas-start leftNavBar" tabindex="-1" id="offcanvasNavbar">
         <div class="offcanvas-header">
           <!-- <h5 class="offcanvas-title">S & Q wedding</h5> -->
+
           <button
             type="button"
             class="btn-close"
