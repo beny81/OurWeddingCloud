@@ -10,6 +10,9 @@ export default defineConfig({
     base: process.env.NODE_ENV === 'production'
     ? '/OurWeddingCloud/'
     : '/',
+  build: {
+    outDir: 'docs'
+  },
   plugins: [
     vue(),
     vueJsx(),
