@@ -1,62 +1,89 @@
-<script>
+<script setup>
 import SmallNavBar from '@/components/SmallNavBar.vue'
 import LeftNavBar from '@/components/LeftNavBar.vue'
 import CountdownTimer from '@/components/CountdownTimer.vue'
+import { weddingInfoStore } from '@/stores/weddingInfo.js'
 
-export default {
-  components: {
-    LeftNavBar,
-    SmallNavBar,
-    CountdownTimer,
-  },
-}
+const details = weddingInfoStore().WEDDING_DETAILS
+const formattedShort = new Date(details.date).toLocaleDateString('en-US', {
+  month: 'long',
+  day: 'numeric',
+})
 </script>
 
 <template>
-  <div class="container-fluid">
-    <div class="row pt-0">
-      <header class="ms-0 d-none d-md-block sidebar sticky-top top-0 start-0 h-100 px-0">
-        <LeftNavBar />
-      </header>
-      <header class="d-block d-md-none mb-2">
-        <small-nav-bar />
-      </header>
+  <div class="app-layout">
+    <!-- Desktop sidebar -->
+    <aside class="d-none d-md-flex sidebar">
+      <LeftNavBar />
+    </aside>
 
-      <!-- <footer
-        class="ms-1 d-block d-md-none  position-fixed end-0 start-0 "
-        style="z-index: 2000;"
-      >
-        <SmallNavbar/>
-      </footer> -->
+    <!-- Mobile top navbar -->
+    <SmallNavBar />
 
-      <main class="col d-none d-md-block px-0 main-content">
-        <nav class="navbar position-sticky top-0 w-100 mb-2 px-0">
-          <div class="container-fluid justify-content-end">
-            <CountdownTimer />
-          </div>
-        </nav>
+    <!-- Main content -->
+    <main class="main-content">
+      <!-- Desktop top bar -->
+      <nav class="d-none d-md-flex top-bar position-sticky top-0 px-4">
+        <div class="w-100 d-flex align-items-center justify-content-end gap-3">
+          <span class="top-bar-label">{{ formattedShort }} &middot; {{ details.time }}</span>
+          <CountdownTimer />
+        </div>
+      </nav>
 
+      <!-- Centered page content -->
+      <div class="slot-wrapper">
         <slot />
-      </main>
-
-      <main class="d-block d-md-none">
-        <slot />
-      </main>
-    </div>
+      </div>
+    </main>
   </div>
 </template>
 
 <style scoped>
-nav {
-  background-color: #ffe6d1; /* soft pastel background */
-  color: #b63e3e; /* match your wedding accent */
-  border: 1px solid #ffd6ba;
+.app-layout {
+  display: flex;
+  min-height: 100vh;
 }
+
 .sidebar {
   width: 22%;
-  position: fixed;
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
 }
+
 .main-content {
-  margin-left: 22%;
+  flex: 1;
+  min-width: 0;
+}
+
+.top-bar {
+  background-color: #fff5ee;
+  border-bottom: 1px solid #ffd6ba;
+  min-height: 52px;
+}
+
+.top-bar-label {
+  font-size: 0.78rem;
+  color: #b63e3e;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  opacity: 0.75;
+}
+
+.slot-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .main-content {
+    padding-top: 72px;
+  }
 }
 </style>

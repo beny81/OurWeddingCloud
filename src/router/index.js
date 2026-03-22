@@ -9,10 +9,6 @@ const router = createRouter({
       component: () => import('../pages/Home.vue'),
     },
     {
-      path: '/home',
-      redirect: '/',
-    },
-    {
       path: '/schedule',
       name: 'Schedule',
       component: () => import('../pages/Schedule.vue'),
@@ -32,11 +28,10 @@ const router = createRouter({
       name: 'Gallery',
       component: () => import('../pages/Gallery.vue'),
     },
-
-    // Catch-all route for unknown URLs
     {
       path: '/:pathMatch(.*)*',
-      redirect: '/',
+      name: 'NotFound',
+      component: () => import('../pages/NotFound.vue'),
     },
   ],
 })
