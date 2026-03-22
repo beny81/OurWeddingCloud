@@ -1,5 +1,5 @@
 <script setup>
-import NavItem from '@/components/NavItem.vue'
+import SidebarNav from '@/components/SidebarNav.vue'
 import CountdownTimer from './CountdownTimer.vue'
 import { weddingInfoStore } from '@/stores/weddingInfo.js'
 
@@ -25,15 +25,17 @@ const brides = infoStore.brides
       <!-- Couple + countdown -->
       <div class="couple-info text-center">
         <h6 class="fw-bold m-0">
-          {{ brides[0]?.firstName }} & {{ brides[1]?.firstName }}'s Wedding
+          {{ brides[0]?.firstName }} &amp; {{ brides[1]?.firstName }}'s Wedding
         </h6>
-        <div class="text-gray">
+        <div class="text-gray d-flex justify-content-center">
           <CountdownTimer />
         </div>
       </div>
 
-      <!-- Spacer for balance -->
-      <div class="nav-spacer"></div>
+      <!-- Monogram badge -->
+      <div class="monogram" aria-hidden="true">
+        {{ brides[0]?.firstName?.charAt(0) }}&amp;{{ brides[1]?.firstName?.charAt(0) }}
+      </div>
 
       <!-- Offcanvas menu -->
       <div class="offcanvas offcanvas-start leftNavBar" tabindex="-1" id="offcanvasNavbar">
@@ -45,11 +47,8 @@ const brides = infoStore.brides
             aria-label="Close"
           ></button>
         </div>
-
         <div class="offcanvas-body p-0">
-          <ul class="navbar-nav flex-column px-0">
-            <NavItem />
-          </ul>
+          <SidebarNav />
         </div>
       </div>
     </div>
@@ -62,22 +61,29 @@ nav {
   color: #b63e3e;
 }
 
-.navbar-brand {
-  font-weight: 500;
-}
-
-.nav-link {
-  padding: 0.5rem 1rem;
-}
-
 .leftNavBar {
-  width: 60%;
+  width: 70%;
   background: linear-gradient(145deg, #fff8f0, #ffece0);
   border: 1px solid #ffd6ba;
 }
 
 .text-gray {
   color: gray;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
+}
+
+.monogram {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #b63e3e;
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
 }
 </style>

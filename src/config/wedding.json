@@ -1,0 +1,13 @@
+{
+  "couple": [
+    { "id": 1, "firstName": "Romeo", "lastName": "Montague", "nickName": "Ro" },
+    { "id": 2, "firstName": "Juliet", "lastName": "Capulet", "nickName": "Jul" }
+  ],
+  "venue": {
+    "name": "Sunset Garden",
+    "address": "123 Ocean Drive, Miami, FL"
+  },
+  "date": "2026-06-20",
+  "time": "16:00",
+  "dresscode": "Black Tie Optional"
+}
