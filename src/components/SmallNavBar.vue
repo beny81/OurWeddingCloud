@@ -1,10 +1,27 @@
 <script setup>
+import { watch } from 'vue'
+import { useRoute } from 'vue-router'
 import SidebarNav from '@/components/SidebarNav.vue'
 import CountdownTimer from './CountdownTimer.vue'
 import { weddingInfoStore } from '@/stores/weddingInfo.js'
 
 const infoStore = weddingInfoStore()
 const brides = infoStore.brides
+
+const route = useRoute()
+
+watch(
+  () => route.path,
+  () => {
+    const offcanvasEl = document.getElementById('offcanvasNavbar')
+    if (offcanvasEl) {
+      import('bootstrap').then(({ Offcanvas }) => {
+        const instance = Offcanvas.getInstance(offcanvasEl)
+        if (instance) instance.hide()
+      })
+    }
+  },
+)
 </script>
 
 <template>

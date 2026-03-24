@@ -6,8 +6,8 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
-export default defineConfig({
-    base: process.env.NODE_ENV === 'production'
+export default defineConfig(({ command }) => ({
+    base: command === 'build'
     ? '/OurWeddingCloud/'
     : '/',
   build: {
@@ -16,11 +16,11 @@ export default defineConfig({
   plugins: [
     vue(),
     vueJsx(),
-    vueDevTools(),
+    command !== 'build' && vueDevTools(),
   ],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
-})
+}))
