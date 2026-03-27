@@ -36,4 +36,15 @@ const router = createRouter({
   ],
 })
 
+// After every navigation, reset all scroll locks Bootstrap's ScrollBarHelper may have left behind.
+// It sets overflow + paddingRight on body, and paddingRight on .fixed-top/.fixed-bottom elements.
+router.afterEach(() => {
+  document.body.style.overflow = ''
+  document.body.style.paddingRight = ''
+  document.querySelectorAll('.fixed-top, .fixed-bottom, .sticky-top').forEach((el) => {
+    el.style.paddingRight = ''
+    el.style.marginRight = ''
+  })
+})
+
 export default router
